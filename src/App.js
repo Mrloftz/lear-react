@@ -1,26 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Header from "./components/Header"
+import MainContent from "./components/MainContent"
+import Footer from "./components/Footer"
+import Menu from "./components/MenuList"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends React.Component {
+  render() {
+    let links = [
+      {label: 'Home', link: '#home', active: true},
+      {label: 'About', link: '#about'},
+      {label: 'Portfolio', link: '#portfolio'},
+      {label: 'Contact Us', link: '#contact-us'}
+    ]
+    return (
+      <div className="container center">
+        <Menu links={links}/>
+        <Header />
+        <MainContent />
+        <Footer />
+      </div>
+    );
+  }
 }
 
 export default App;
